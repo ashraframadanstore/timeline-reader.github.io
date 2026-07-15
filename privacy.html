@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Timeline Reader</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:      #0C0B0C;
+      --surface: #131213;
+      --line:    #1E1D1E;
+      --blue:    #3B82F6;
+      --cyan:    #06B6D4;
+      --white:   #EFEFEF;
+      --dim:     #6B7280;
+      --faint:   #2A292A;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      height: 56px;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      background: rgba(12, 11, 12, 0.85);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nav-brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 32px;
+    }
+
+    nav ul a {
+      font-size: 13px;
+      color: var(--dim);
+      padding: 6px 14px;
+      border-radius: 100px;
+      background: var(--surface);
+      position: relative;
+      transition: color 0.2s;
+    }
+
+    nav ul a::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, #3B82F6, #6624F2, #FF4DE2, #06B6D4);
+      z-index: -1;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    nav ul a:hover { color: var(--white); }
+    nav ul a:hover::before { opacity: 1; }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 24px 100px;
+    }
+
+    .page-eyebrow {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .page-wrap h1 {
+      font-size: 36px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .page-meta {
+      font-size: 13px;
+      color: var(--dim);
+      margin-bottom: 56px;
+    }
+
+    .policy-section {
+      border-top: 1px solid var(--line);
+      padding: 32px 0;
+    }
+
+    .policy-section:last-of-type {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .policy-section h2 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+
+    .policy-section p {
+      font-size: 14px;
+      color: var(--dim);
+      line-height: 1.75;
+    }
+
+    .policy-section p + p {
+      margin-top: 10px;
+    }
+
+    .policy-section ul {
+      list-style: none;
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .policy-section ul li {
+      font-size: 14px;
+      color: var(--dim);
+      line-height: 1.6;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .policy-section ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--dim);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p { font-size: 12px; color: var(--dim); }
+
+    .btn-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--dim);
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .btn-top:hover { border-color: var(--dim); color: var(--white); }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      nav ul { display: none; }
+      .page-wrap h1 { font-size: 28px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-brand">
+      <img src="icon.png" alt="Timeline Reader">
+      <span>Timeline Reader</span>
+    </div>
+    <ul>
+      <li><a href="index.html#features">Features</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-wrap">
+    <span class="page-eyebrow">Legal</span>
+    <h1>Privacy Policy</h1>
+    <p class="page-meta">Effective date: July 1, 2026</p>
+
+    <div class="policy-section">
+      <h2>Overview</h2>
+      <p>Timeline Reader is an RSS reader app that lets you follow news feeds and listen to articles. We are committed to protecting your privacy. This policy describes what information the app handles and how.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data we do not collect</h2>
+      <p>Timeline Reader does not collect, transmit, or share any personal information. Specifically, we do not collect:</p>
+      <ul>
+        <li>Names, email addresses, or account credentials</li>
+        <li>Location data</li>
+        <li>Usage analytics or crash reports</li>
+        <li>Device identifiers</li>
+        <li>Any data sent to our servers</li>
+      </ul>
+    </div>
+
+    <div class="policy-section">
+      <h2>Data stored on your device</h2>
+      <p>All app data is stored locally on your device using Apple's SwiftData framework. This includes the RSS feeds you subscribe to, downloaded articles, read/unread status, and your settings. This data never leaves your device unless you choose to export it.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Network requests</h2>
+      <p>The app makes outbound requests only to fetch the RSS and Atom feeds you have added. No data about you or your reading habits is included in these requests. Feed URLs are the only external endpoints the app contacts.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Apple Intelligence and on-device AI</h2>
+      <p>The AI Digest feature uses Apple's FoundationModels framework to generate spoken introductions for articles. All processing happens entirely on your device. No article content or generated text is sent to any external server, including ours.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Background refresh</h2>
+      <p>The app uses iOS Background App Refresh to periodically fetch new articles from your feeds. This is performed directly between your device and the feed servers — no intermediary is involved.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Spotlight indexing</h2>
+      <p>Article titles and summaries are indexed in iOS Spotlight so you can search for them from the home screen. This index is stored locally on your device and managed by iOS.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Third-party services</h2>
+      <p>Timeline Reader does not integrate any third-party analytics, advertising, or tracking SDKs. All frameworks used are Apple's own system frameworks.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Children's privacy</h2>
+      <p>The app does not knowingly collect any data from users of any age. Because no data is collected, the app is safe for all audiences.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Changes to this policy</h2>
+      <p>If we make material changes to this privacy policy, we will update the effective date above and post the revised policy on this page.</p>
+    </div>
+
+    <div class="policy-section">
+      <h2>Contact</h2>
+      <p>If you have questions about this privacy policy, please contact us at <a href="mailto:ashraframadanstore@gmail.com">ashraframadanstore@gmail.com</a>.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>&#169; 2026 Timeline Reader. All rights reserved.</p>
+    <button class="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="4 10 8 6 12 10"/>
+      </svg>
+    </button>
+  </footer>
+
+</body>
+</html>
